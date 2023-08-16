@@ -15,7 +15,7 @@ You can follow these simple steps to enjoy a better Windows experience:
 
 2. Open "win11-iot-debloat.txt" and copy all contents with Ctrl + A.
 
-![Second Step](https://i.imgur.com/xd2TSv4.png)
+![Second Step](https://i.imgur.com/Xop2yYz.png)
 
 3. Open Terminal/Powershell with Administrator rights and press right click in the terminal and press "Paste Anyway" if asked.
 
