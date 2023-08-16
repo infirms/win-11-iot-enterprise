@@ -32,7 +32,7 @@ $AppList = @(
 	"Microsoft.BingNews",
 	"Microsoft.BingWeather",
 	# Allows to install APPX, MSIXBUNDLE and their dependecies, quite handy without microsoft store
-	#"Microsoft.DesktopAppInstaller",
+	"Microsoft.DesktopAppInstaller",
 	# Xbox gaming app
 	"Microsoft.GamingApp",
 	"Microsoft.GetHelp",
