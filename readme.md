@@ -38,7 +38,9 @@ a27e017232b4f7aaaa8ab5b10ff0b852db1e9557216e896bc32fc390c316e138
 ## References
 Official Windows LTSC Retailer that proves my point by showing the system.
 https://youtu.be/6CTOA-AjuI8
+
 Windows 10 IoT Enterprise LTSC with "Get-AppxPackage –AllUsers | Select Name, PackageFullName" in powershell.
+
 My experience and knowledge.
 
 
