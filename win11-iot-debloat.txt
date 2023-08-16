@@ -1,0 +1,78 @@
+Write-Output "Disabling privacy violating crap..."
+
+function DisableSearchBoxSuggestions
+{
+	if (-not (Test-Path -Path HKCU:\Software\Policies\Microsoft\Windows\Explorer))
+	{
+		New-Item -Path HKCU:\Software\Policies\Microsoft\Windows\Explorer -Force
+	}
+	New-ItemProperty -Path HKCU:\Software\Policies\Microsoft\Windows\Explorer -Name DisableSearchBoxSuggestions -PropertyType DWord -Value 1 -Force
+}
+
+function DisableMsGamingOverlay
+{
+    if (-not (Test-Path -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR))
+	{
+		New-Item -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR -Force
+	}
+	New-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR -Name AllowgameDVR -PropertyType DWord -Value 0 -Force
+}
+
+DisableSearchBoxSuggestions
+DisableMsGamingOverlay
+
+$AppList = @(
+	# Student control restrict urls etc...
+	#(can't be deleted for now)
+	#"Microsoft.Windows.SecureAssessmentBrowser",
+	# Cortana
+	"Microsoft.549981C3F5F10",
+	# Shit editor
+	"Clipchamp.Clipchamp",
+	"Microsoft.BingNews",
+	"Microsoft.BingWeather",
+	# Allows to install APPX, MSIXBUNDLE and their dependecies, quite handy without microsoft store
+	#"Microsoft.DesktopAppInstaller",
+	# Xbox gaming app
+	"Microsoft.GamingApp",
+	"Microsoft.GetHelp",
+	#It's even presented on the original Windows 11 IoT Enterprise LTSC so we can't delete it
+	"Microsoft.Getstarted",
+	"Microsoft.MicrosoftOfficeHub",
+	"Microsoft.MicrosoftSolitaireCollection",
+	"Microsoft.MicrosoftStickyNotes",
+	"Microsoft.Paint",
+	"Microsoft.People",
+	# Robotic system macroses 
+	"Microsoft.PowerAutomateDesktop",
+	"Microsoft.ScreenSketch",
+	"Microsoft.StorePurchaseApp",
+	"Microsoft.Todos",
+	"Microsoft.Windows.Photos",
+	"Microsoft.WindowsAlarms",
+	#"Microsoft.WindowsCalculator",
+	"Microsoft.WindowsCamera",
+	# Calendar and Email app
+	"microsoft.windowscommunicationsapps",
+	"Microsoft.WindowsFeedbackHub",
+	"Microsoft.WindowsMaps",
+	"Microsoft.WindowsSoundRecorder",
+	"Microsoft.WindowsStore",
+	#"Microsoft.WindowsTerminal",
+	"Microsoft.Xbox.TCUI",
+	"Microsoft.XboxGameOverlay",
+	"Microsoft.XboxGamingOverlay",
+	"Microsoft.XboxIdentityProvider",
+	"Microsoft.XboxSpeechToTextOverlay",
+	"Microsoft.YourPhone",
+	"Microsoft.ZuneMusic",
+	"Microsoft.ZuneVideo",
+	# Quick Assist
+	"MicrosoftCorporationII.QuickAssist",
+	# The notorious bloate widgets (Weather, News...)
+	"MicrosoftWindows.Client.WebExperience"
+)
+
+foreach ($App in $AppList) {
+	Get-AppxPackage -AllUsers -Name $App | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue
+}
