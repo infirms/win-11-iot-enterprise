@@ -24,7 +24,7 @@ DisableMsGamingOverlay
 $AppList = @(
 	# Student control restrict urls etc...
 	#(can't be deleted for now)
-	#"Microsoft.Windows.SecureAssessmentBrowser",
+	"Microsoft.Windows.SecureAssessmentBrowser",
 	# Cortana
 	"Microsoft.549981C3F5F10",
 	# Shit editor
