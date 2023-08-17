@@ -69,7 +69,7 @@ $AppList = @(
 	"Microsoft.ZuneVideo",
 	# Quick Assist
 	"MicrosoftCorporationII.QuickAssist",
-	# The notorious bloate widgets (Weather, News...)
+	# The notorious bloated widgets (Weather, News...)
 	"MicrosoftWindows.Client.WebExperience"
 )
 
