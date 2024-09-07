@@ -1,3 +1,5 @@
+## Official Windows 11 IoT Enterprise LTCS has been released, so this repo will be archived
+
 ## Windows 11 IoT Enterprise to Windows 11 IoT Enterprise LTSC transformation
 
 Windows 11 IoT Enterprise LTSC is set to be released in Q2 2024. IoT Enterprise LTSC versions of Windows are known for having less bloat and better performance on lower-end machines.
